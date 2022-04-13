@@ -1,0 +1,593 @@
+/* ----------------------------------------Thiết lập cơ bản---------------------------------------- */
+:root {
+    font-family: 'Roboto';
+    font-size: 22px;
+}
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.space-between {
+    justify-content: space-between;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+.container2 {
+    padding-top: 55px; 
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    align-items: center; /* Center này canh giữa ô cho phần tử trong header */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+body{
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-size: 18px;
+    line-height: 1.
+}
+/* ----------------------------------------Header-------------------------------------------------- */
+.top {
+    padding: 12px 0;
+    align-items: center;
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    background-color: #FFB6C1;
+    transition: all 0.3s ease;
+}
+.top.active {
+    background-color: rgba(255, 255, 255, 1);
+}
+.top:hover {
+    background-color: rgba(255, 255, 255, 1);
+    /* background-color: #BA55D3; */
+}
+
+.top-logo {
+    flex: 1;
+}
+
+.top-logo > a img{
+    width: 160px;
+    height: 45px;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+/* ----------------------------------------Header - Menu Items-------------------------------------------------- */
+.top-menu-items{
+    flex: 3;
+    display: flex;
+}
+
+.top-menu-items> li{
+    padding: 0 12px;
+    position: relative;
+}
+
+.top-menu-items> li:hover{
+    transition: 0.3s;
+    text-decoration: underline;
+}
+
+.top-menu-items> li:hover .top-menu-item{
+    visibility: visible; /* Khi hover vào sub menu hiện ra */
+    top: 30px;
+    /* top: 50px */
+}
+
+.top-menu-item{
+    position: absolute;
+    width: 250px;
+    border: 1px solid #ccc;
+    padding: 8px 0px 10px 20px;
+    visibility: hidden; /* Ẩn đi sub menu */
+    top: 60px;
+    /* top: 30px; */
+    transition: 0.5s; /* Độ trễ */
+    background-color: white;
+    z-index: 1;
+}
+
+.top-menu-item ul{
+    padding-left: 30px;
+}
+
+.top-menu-item ul a{
+    font-weight: normal !important;
+    font-size: 12.5px!important;
+}
+
+.top-menu-item > li a:hover{
+    margin-left: 5px;
+    text-decoration: underline;
+    color: red;
+    transition: 0.5s; /* Độ trễ */
+}
+
+.top li a{
+    font-size: 16px;
+    font-weight: bold !important;
+    display: block;
+    line-height: 30px;
+}
+/* ----------------------------------------Header Top Menu Icons-------------------------------------------------- */
+.top-menu-icons{
+    flex: 1;
+    display: flex;
+}
+
+.top-menu-icons > li{
+    padding: 0 12px;
+    position: relative;
+}
+
+.top-menu-icons > li::after{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 50%;
+    background-color: #dddddd;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.top-menu-icons > li:first-child{
+    position: relative;
+}
+
+.top-menu-icons > li:first-child input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #333333;
+    outline: none; /*Không cho nó hiện cái khung ra*/
+    background: transparent;
+}
+
+.top-menu-icons > li:first-child i{
+    position: absolute;
+    right: 10px;
+}
+
+/* ----------------------------------------Slider-------------------------------------------------- */
+.slider-item{
+    width: 100vw;
+    height: 75vh;
+    position: relative;
+
+}
+/* Làm slider mờ nhẹ không loá mắt */
+/* .slider-item::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+} */
+/* End */
+
+.slider-item-one{
+    background-image: url('../IMAGES/Banner1.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider-item-two{
+    background-image: url('../IMAGES/Banner1.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider-item-three{
+    background-image: url('../IMAGES/Banner1.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* CSS cho thanh điều hướng Slider */
+
+.owl-prev{
+    position: absolute;
+    left: 0; /*Đinh dạng cho nút này nằm bên trái */
+    font-size: 150px !important;
+    color:white !important;
+    top: 50%; /*Đinh dạng cho nút này dịch chuyển lên trên 50% trang */
+    transform: translateY(-50%);
+}
+
+.owl-prev, .owl-next:hover{
+    background: none !important;
+}
+
+.owl-next{
+    position: absolute;
+    right:0; /*Đinh dạng cho nút này nằm bên phải */
+    font-size: 150px !important;
+    color:white !important;;
+    top: 50%; /*Đinh dạng cho nút này dịch chuyển lên trên 50% trang */
+    transform: translateY(-50%); /* Chưa rõ chức năng */
+}
+
+.owl-dots{
+    position: absolute;
+    display: flex;
+    flex-direction: column;  /* Định dang cho các nút Dots điều hướng chuyển thành hàng dọc thay vì hang ngang */
+    top: 52%;
+    right: 60px; /*Cách bìa trang phải 30px*/
+    font-size: 30px;
+    transform: translateY(-41%);
+}
+.owl-dot span{
+    width: 15px !important;
+    height: 15px !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+}
+
+.owl-dot{
+    width: 23px;
+    height: 23px;
+    border: 2px solid white !important;
+    border-radius: 50%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 7px;
+}
+
+.owl-dot.active span{
+    background-color: black!important;
+}
+
+.banner-content{
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    z-index: 999;
+    margin: 75px auto;
+    padding-bottom: 10px;
+}
+
+.title{
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+
+.homepages-course-wrapper{
+    width: 100vw;   
+    background-color: #23085A;
+    padding: 75px 0 75px;
+    margin: 0 auto; 
+    left: 50%;
+    display: flex;
+}
+.wrapper-setting{
+    width: 31.66667%;
+    padding: 0 30px 100px;
+    background-color: #fff;
+    border-radius: 50px 0;
+    position: relative;
+    margin-left: 14px;
+}
+.wrapper{
+    margin: 0 -30px 20px -30px;
+    border-top-left-radius: 50px;
+    overflow: hidden;
+}
+
+.title{
+    margin-bottom: 5px;
+    font-family: "BritishCouncilSansW01-Headline",Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-size: 28px;
+    line-height: 1.2;
+    color: #23085A;
+}
+.text{
+    font-size: 16px;
+}
+.link{
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    /* height: 40px;
+    width: 40px; */
+    background-color: #23085A;
+    border-radius: 20px;
+}
+.link h4{
+    color: white;
+    width: 175px;
+    height: 30px;
+    justify-self: center;
+    text-align: center;
+    justify-content: center;
+    padding-top: 3.5px;
+    padding-bottom: 2px;
+    border-radius: 20px;
+}
+.views-field-bottom-banner-content{
+    width: 100%;
+    max-width: 800px;
+    background-color: white;    
+    margin: 75px auto;
+    padding-bottom: 10px;
+}
+.free-resources{
+    width: 100vw;
+    margin-left: -50vw;
+    padding: 80px 0;
+    background-color: #23085A;
+    position: relative;
+    left: 50%;
+}
+.free-resources-top{
+    width: 100%;
+    max-width: 1025px;
+    margin: 0 auto;
+    padding: 0 0;
+    padding: 20px 0 0;
+    font-size: 36px;
+    font-weight: 400;
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 150px;
+    padding-right: 15px;
+    color: #fff;
+    display: flex;
+}
+.free-resources-top i{
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    margin-right: 15px;
+    text-align: center;
+}
+.free-resources-bottom ul h3{
+    text-align: center;
+}
+.free-resources-bottom p{
+    width: 100%;
+    max-width: 1025px;
+    margin: 0 auto;
+    padding: 0 15px;
+    padding-left: 150px;
+    color: #fff;
+}
+.free-resources-bottom ul{
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: space-between;
+    margin: 50px auto;
+    list-style-type: none;
+}
+.free-resources-bottom p:first-child{
+    width: 100%;
+    max-width: 1025px;
+    margin: 0 auto;
+    padding: 0 15px;
+    padding-left: 150px;
+    color: #fff;
+}
+.free-resources-bottom p:last-child{
+    text-align: center;
+}
+.free-resources-bottom p:last-child span{
+    display: inline-block;
+}
+.free-resources-bottom p:last-child a{
+    display: inline-flex;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-width: 190px;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #5DEB4B;
+    border: 0;
+    border-radius: 20px;
+    opacity: 1;
+    transition: all .3s linear;
+    color: #23085A;
+}
+.free-resources-bottom ul li{
+    width: 31.66667%;
+    padding: 40px 30px;
+    background-color: #fff;
+    border: 3px solid #5DEB4B;
+    border-radius: 50px 0;
+}
+.free-resources-bottom ul h3{
+    margin: 0 0 15px;
+    padding-left: 58px;
+    position: relative;
+}
+.free-resources-bottom ul i{
+    margin-right: 5px;
+    font-size: 30px;
+    background-size: 13px 10px;
+    border: 3px solid #5DEB4B;
+    border-radius: 10px 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    content: '';
+}
+.free-resources-bottom ul p{
+    color: black;
+    padding-left: 58px;
+    font-size: 15px;
+}
+.free-resources-bottom p span{
+    margin-right: 15%;
+}
+
+/* ----------------------------------------Footer-------------------------------------------------- */
+.footer {
+    padding: 100px 0 0;
+}
+.footer-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.footer-container p {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: var(--main-text-font);
+}
+.app-google {
+    margin: 25px 0;
+}
+.app-google img {
+    width: 150px;
+    cursor: p;
+}
+.input-email {
+    position: relative;
+    width: 300px;
+    margin: auto;
+    margin-top: 20px;
+}
+.input-email input {
+    width: 100%;
+    border: none;
+    padding-bottom: 12px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    background-color: #f6f6f6;
+}
+.input-email i {
+    position: absolute;
+    right: 12px;
+    bottom: 6px;
+    cursor: pointer;
+}
+
+.footer{
+    background-color: #F6F6F6;
+}
+
+.footer-container{
+    background-color: #F6F6F6;
+}
+.footer-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 30px 0; */
+    margin-top: 15px;
+    width: 100%;
+    background-color: black;
+    line-height: 15px;
+}
+.footer-items li {
+    padding: 12px;
+    position: relative;
+}
+.footer-items li a {
+    color: #333;
+    font-family: var(--main-text-font);
+    font-weight: bold;
+    font-size: 12px;
+    color: white !important;
+}
+.footer-items li:hover {
+    padding-top: 5px;
+    transition: 0.3s;
+    text-decoration: underline;
+}   
+.footer-items li::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 50%;
+    background-color: #cccccc;
+    right: 0;
+}
+.footer-items li:last-child::after {
+    display: none;
+}
+.footer-items li:last-child i {
+    font-size: 12px;
+    margin-right: 12px;
+    color: #333333;
+}
+.footer-items li:last-child i:hover {
+    color: black;
+}
+.footer-items img {
+    width: 100px;
+}
+.footer-text {
+    text-align: center;
+    font-size: 12px;
+    font-family: var(--main-text-font);
+    width: 100%;
+    background-color: black;
+    line-height: 15px;
+}
+.footer-text > p{
+    color: white;
+}
+.footer-bottom {
+    padding: 10px 0;
+    font-size: 12px;
+    font-family: var(--main-text-font);
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    /* margin-top: 30px; */
+    line-height: 15px;
+}
+.footer-bottom > p{
+    color: white;
+    font-size: 14px;
+}
+.footer-text > p{
+    font-size: 12px;
+    font-weight: normal;
+}
